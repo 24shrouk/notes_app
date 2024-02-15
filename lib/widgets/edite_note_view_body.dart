@@ -21,11 +21,13 @@ class EditeNoteViewBody extends StatelessWidget {
           SizedBox(
             height: 50,
           ),
-          CustomTextFeild(hint: 'Title'),
+          CustomTextFormFeild(
+            hint: 'Title',
+          ),
           SizedBox(
             height: 16,
           ),
-          CustomTextFeild(
+          CustomTextFormFeild(
             hint: 'Content',
             maxLines: 5,
           ),
