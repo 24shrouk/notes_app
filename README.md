@@ -1,4 +1,4 @@
-# tasks_app
+# to_do_app
 
 This is my project. Below is a video of the project interface you can download :
 
