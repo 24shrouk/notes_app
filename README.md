@@ -1,6 +1,14 @@
 # notes_app
 
-A new Flutter project.
+This is my project. Below is a video of the project interface you can download :
+
+
+[Watch the video](https://github.com/24shrouk/notes_app/blob/main/VID-20241001-WA0001.mp4.mp4)
+
+
+
+ screenshot:
+![Image Alt Text](https://github.com/24shrouk/notes_app/blob/main/IMG-20241001-WA0000.jpg)
 
 ## Getting Started
 
