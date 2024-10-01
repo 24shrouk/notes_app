@@ -1,4 +1,4 @@
-# notes_app
+# tasks_app
 
 This is my project. Below is a video of the project interface you can download :
 
