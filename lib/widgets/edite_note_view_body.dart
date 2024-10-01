@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/constant.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/modals/note_model.dart';
+import 'package:notes_app/widgets/colors_list_view.dart';
 import 'package:notes_app/widgets/custom_app_bar.dart';
 import 'package:notes_app/widgets/custom_text_feild.dart';
 
@@ -56,8 +58,56 @@ class _EditeNoteViewBodyState extends State<EditeNoteViewBody> {
             hint: widget.note.subTitle,
             maxLines: 5,
           ),
+          const SizedBox(
+            height: 16,
+          ),
+          EditNotesColorList(
+            note: widget.note,
+          ),
         ],
       ),
+    );
+  }
+}
+
+class EditNotesColorList extends StatefulWidget {
+  const EditNotesColorList({super.key, required this.note});
+  final NoteModel note;
+  @override
+  State<EditNotesColorList> createState() => _EditNotesColorListState();
+}
+
+class _EditNotesColorListState extends State<EditNotesColorList> {
+  late int currentIndex;
+  @override
+  void initState() {
+    currentIndex = kListOfColors.indexOf(Color(widget.note.color));
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 76,
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: kListOfColors.length,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 6.0),
+              child: GestureDetector(
+                onTap: () {
+                  currentIndex = index;
+                  widget.note.color = kListOfColors[index].value;
+                  setState(() {});
+                },
+                child: ColorItem(
+                  color: kListOfColors[index],
+                  isActive: currentIndex == index,
+                ),
+              ),
+            );
+          }),
     );
   }
 }

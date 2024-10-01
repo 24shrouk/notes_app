@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:hive/hive.dart';
-import 'package:meta/meta.dart';
 import 'package:notes_app/constant.dart';
 import 'package:notes_app/modals/note_model.dart';
 
